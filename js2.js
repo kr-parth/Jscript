@@ -107,22 +107,38 @@ console.log(som);
 const fi = temp.fill(0,1,5);
 console.log(fi);
 
-// map data structure
+// Map data structure
 
-const ds = new Map();
-ds.set('name','user');
-ds.set('age',10);
-ds.set(3,'third');
-ds.set([1,2,3],'array');
-ds.set(person,{name:'user',num:7});
+const ds = new Map([['name','user'],['age',10]]);
+ds.set(3,'third')
+.set([1,2,3],'array')
+.set(person,{name:'user',num:7});
 
 console.log(ds);
 console.log(ds.get(3));
 console.log(ds.get(person).num);
+console.log(ds.has('age'));
+ds.delete('age');
+console.log(ds.size);
 
 for(let key of ds.keys()){
     console.log(key);
 }
-for(let key of ds){
+for(let key of ds.values()){
     console.log(key);
 }
+
+const mfromo = new Map(Object.entries(person));
+console.log(mfromo);
+
+// Set data structure
+// also has .keys , .values , .entries like Map
+
+const se = new Set([1,3,3,5,7,9]);
+se.add(11);
+se.delete(11);
+console.log(se.has(11));
+console.log(se);
+
+
+
